@@ -1,6 +1,7 @@
 # Developer declared ignores (build files)
 src/retrained_graph.pb
 src/retrained_labels.txt
+.vscode
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
