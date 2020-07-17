@@ -1,3 +1,7 @@
+# Developer declared ignores (build files)
+dataset/train/*
+!dataset/train/.gitkeep
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
