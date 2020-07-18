@@ -64,6 +64,7 @@ dependencies:
   - pyreadline=2.1=py37_1
   - pysocks=1.7.1=py37_1
   - python=3.7.7=h81c818b_4
+  - python-dotenv=0.14.0=pyh9f0ad1d_0
   - python_abi=3.7=1_cp37m
   - qt=5.12.5=h7ef1ec2_0
   - requests=2.24.0=py_0
@@ -91,5 +92,10 @@ dependencies:
   - xz=5.2.5=h62dcd97_1
   - zlib=1.2.11=h62dcd97_4
   - zstd=1.4.4=h9f78265_3
+  - pip:
+    - ibm-cloud-sdk-core==1.5.1
+    - ibm-watson==4.5.0
+    - python-dateutil==2.8.1
+    - websocket-client==0.48.0
 prefix: D:\Programs\Anaconda\envs\anime-vision
 
