@@ -11,7 +11,7 @@ import cv2
 WIDTH = 100
 HEIGHT = 100
 
-def conversion(character_name, cascade_file = os.path.join(os.getcwd(), 'models', 'lbpcascade_animeface.xml')):
+def conversion(character_name, cascade_file = os.path.join(os.getcwd(), 'data-models', 'lbpcascade_animeface.xml')):
   # 1) Create a cascade file filled with the trained classifier from Nagadomi.
   cascade = cv2.CascadeClassifier(cascade_file)
   raw_images = os.listdir(os.path.join('dataset', 'raw', character_name))
@@ -50,9 +50,6 @@ def main():
   if len(sys.argv) != 1:
     sys.stderr.write("Usage: python preparation.py <character_name> (character name must be a folder inside the 'raw' and 'train' folder, and must not contain spaces!) \n")
     sys.exit(-1)
-
-  # Change directory back to the root folder. Important for easier navigation!
-  os.chdir('../')
   
   conversion(sys.argv[1])
   resize(sys.argv[1])
