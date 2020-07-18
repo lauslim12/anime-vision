@@ -18,10 +18,10 @@ Under development.
 ## Ways to Classify
 
 I'm going to use several ways to classify anime faces. The ways are as follows:
-- Using IBM Cloud Visual Recognition to recognize faces (polishing)
-- Using Tensorflow 1.15's Transfer Learning Retrain Script
-- Using Tensorflow Lite's Model Maker (under development)
-- Using Tensorflow 2.10's Image Classifier with Keras (under development)
+- [x] Using Tensorflow 1.15's Transfer Learning Retrain Script
+- [ ] Using IBM Cloud Visual Recognition to recognize faces
+- [ ] Using Tensorflow Lite's Model Maker
+- [ ] Using Tensorflow 2.10's Image Classifier with Keras
 
 ## How to Use
 
