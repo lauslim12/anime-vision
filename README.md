@@ -2,12 +2,26 @@
 
 Anime-Vision is a repository for anime face identification with Deep Learning.
 
+## Introduction
+
+Under development.
+
 ## Requirements
 
 - Anaconda
 - IBM Cloud
+- Keras
 - OpenCV
 - Tensorflow 1.15
+- Tensorflow 2.10
+
+## Ways to Classify
+
+I'm going to use several ways to classify anime faces. The ways are as follows:
+- Using IBM Cloud Visual Recognition to recognize faces (polishing)
+- Using Tensorflow 1.15's Transfer Learning Retrain Script
+- Using Tensorflow Lite's Model Maker (under development)
+- Using Tensorflow 2.10's Image Classifier with Keras (under development)
 
 ## How to Use
 
