@@ -1,15 +1,16 @@
 # Data preparation
-## Description...
+## A script used to recognize faces, and resize them to be 96x96.
 
 # Native Python Modules
 import os
+import sys
 
 # Third Party Python Modules
 import cv2
 
 # Global Constants
-WIDTH = 100
-HEIGHT = 100
+WIDTH = 96
+HEIGHT = 96
 
 def conversion(character_name, cascade_file = os.path.join(os.getcwd(), 'data-models', 'lbpcascade_animeface.xml')):
   # 1) Create a cascade file filled with the trained classifier from Nagadomi.
@@ -18,9 +19,9 @@ def conversion(character_name, cascade_file = os.path.join(os.getcwd(), 'data-mo
 
   # 2) Loop through the dataset/raw folder
   for raw_image in raw_images:
-    # 3) Resize the image to be 100 x 100.
+    # 3) Resize the image to be 96 x 96.
     # First, read the image, then convert them into greyscale for easier computing.
-    image = cv2.imread(os.path.join('dataset', 'raw', raw_image))
+    image = cv2.imread(os.path.join('dataset', 'raw', character_name, raw_image))
     gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
     gray = cv2.equalizeHist(gray)
 
@@ -43,11 +44,10 @@ def resize(character_name):
   for file in files:
     image = cv2.imread(os.path.join('dataset', 'train', character_name, file))
     resized_image = cv2.resize(image, (WIDTH, HEIGHT), interpolation = cv2.INTER_AREA)
-    filename = os.path.basename(file).split('.')[0]
-    cv2.imwrite(os.path.join('dataset', 'train', filename, '.jpg'), resized_image)
+    cv2.imwrite(os.path.join('dataset', 'train', character_name, file), resized_image)
 
 def main():
-  if len(sys.argv) != 1:
+  if len(sys.argv) != 2:
     sys.stderr.write("Usage: python preparation.py <character_name> (character name must be a folder inside the 'raw' and 'train' folder, and must not contain spaces!) \n")
     sys.exit(-1)
   
