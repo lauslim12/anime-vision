@@ -1,6 +1,6 @@
 # Developer declared ignores (build files)
-src/retrained_graph.pb
-src/retrained_labels.txt
+tensorflow-1.15/retrained_graph.pb
+tensorflow-1.15/retrained_labels.txt
 .vscode
 
 # Byte-compiled / optimized / DLL files
