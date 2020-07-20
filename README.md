@@ -6,6 +6,7 @@ Anime-Vision is a repository for anime face identification with Deep Learning.
 
 - Improve accuracy of the model with TensorFlow's Model Maker
 - Improve accuracy of the model with TensorFlow's Make Image Classifier
+- Allow creating classifiers to iterate through all the zip files, not manually like in line 31. (IBM Cloud)
 - Create scraper to fetch raw datasets
 
 ## Introduction
@@ -23,6 +24,10 @@ Under development.
 - TensorFlow 1.15
 - TensorFlow 2.10
 
+## Project Structure
+
+Under development.
+
 ## Ways to Classify
 
 I'm going to use several ways to classify anime faces. The ways are as follows:
@@ -32,6 +37,10 @@ I'm going to use several ways to classify anime faces. The ways are as follows:
 - [x] Using TensorFlow Lite's Model Maker
 - [x] Using TensorFlow 2's Make Image Classifier
 - [ ] Using TensorFlow 2's Image Classifier manually with Keras
+
+## Accuracy
+
+For now, I believe the one with the highest accuracy is TensorFlow 1.15's Transfer Learning. It allows accuracy for my model up to **94%!**
 
 ## How to Use
 
@@ -97,5 +106,4 @@ I do NOT own any of the pictures that might be inside the `dataset` folder. All 
 ## Credits
 
 - [FreedomOfKeima](https://github.com/freedomofkeima) for the dataset and inspiration.
-
 - [Nagadomi](https://github.com/nagadomi) for the anime face model.
