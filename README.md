@@ -51,14 +51,20 @@ This is still a quick prototype. Will edit this section later. Ensure that you h
 - First off, as I'm running this in a Windows environment, simply copy my environment and use it.
 
 ```
-  conda --version
-  conda env create -f anime-vision.yml
-  conda activate anime-vision
+  $ conda --version
+  $ conda env create -f anime-vision.yml
+  $ conda activate anime-vision
 ```
 
 - If you simply want to test the predictions, skip this step. If you want to test this program with your own anime characters, prepare your dataset to a folder in the `dataset/raw/<your_character_name>` and `dataset/train/<your_character_name>`. Make sure that the name is in lowercase and replace any spaces with underscores!
 
 - Then, run `preparation.py <character_name>`. The accuracy for this is **only 83%**, so not all faces could get detected! I have personally seen and edited the dataset so all of the faces could be detected.
+
+- Alternatively, you could use [qhgz2013's Anime Face Detector](https://github.com/qhgz2013/anime-face-detector). It allows up to 90% of accuracy when detecting anime faces. You might have to edit the source code so it crops the detected faces, though. It is trained with Faster-RCNN.
+
+- Another alternative is using [Nagadomi's Anime Face 2009](https://github.com/nagadomi/animeface-2009). However, installation of that is a bit complicated, even the author said so himself.
+
+- Either way, you could use anything that is comfortable with you.
 
 - You are done with getting the main dataset for training. Here's where the fun part starts.
 
@@ -71,8 +77,7 @@ For data analysis itself, you could use five ways to classify (see 'Ways to Clas
 - First off, switch to the `tensorflow-1.15` folder. Then, run the `train.sh` script. This is to train the data! You could also train them manually (not using shell script) by using:
 
 ```
-  Linux:
-  python retrain.py \
+  $ python retrain.py \
     --output_graph ./retrained_graph.pb \
     --output_labels ./retrained_labels.txt \
     --image_dir ./../dataset/train/
@@ -82,7 +87,7 @@ For data analysis itself, you could use five ways to classify (see 'Ways to Clas
 - Second, test the model by using the following command:
 
 ```
-  python retrain-test.py <path_to_image>
+  $ python retrain-test.py <path_to_image>
 ```
 
 - Third, you could see the results of the trained model!
