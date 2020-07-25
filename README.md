@@ -50,7 +50,7 @@ This is still a quick prototype. Will edit this section later. Ensure that you h
 
 - First off, as I'm running this in a Windows environment, simply copy my environment and use it.
 
-```
+```bash
   $ conda --version
   $ conda env create -f anime-vision.yml
   $ conda activate anime-vision
@@ -60,7 +60,14 @@ This is still a quick prototype. Will edit this section later. Ensure that you h
 
 - Then, run `preparation.py <character_name>`. The accuracy for this is **only 83%**, so not all faces could get detected! I have personally seen and edited the dataset so all of the faces could be detected.
 
-- Alternatively, you could use [qhgz2013's Anime Face Detector](https://github.com/qhgz2013/anime-face-detector). It allows up to 90% of accuracy when detecting anime faces. You might have to edit the source code so it crops the detected faces, though. It is trained with Faster-RCNN.
+- Alternatively, you could use [qhgz2013's Anime Face Detector](https://github.com/qhgz2013/anime-face-detector). It allows up to 90% of accuracy when detecting anime faces. You might have to edit the source code so it crops the detected faces, though. It is trained with Faster-RCNN. You could use it by following these instructions.
+
+```bash
+  $ git clone https://github.com/qhgz2013/anime-face-detector.git
+  $ python main.py -i /path/to/image/or/folder -crop-location /path/to/store/cropped/images -crop-height 224 -crop-width 224
+```
+
+- This is just a sample script. For details, you can go and visit the repository. I cropped them to be 224 x 224 because it is the MobileNet V2 Model standard.
 
 - Another alternative is using [Nagadomi's Anime Face 2009](https://github.com/nagadomi/animeface-2009). However, installation of that is a bit complicated, even the author said so himself.
 
@@ -76,7 +83,7 @@ For data analysis itself, you could use five ways to classify (see 'Ways to Clas
 
 - First off, switch to the `tensorflow-1.15` folder. Then, run the `train.sh` script. This is to train the data! You could also train them manually (not using shell script) by using:
 
-```
+```bash
   $ python retrain.py \
     --output_graph ./retrained_graph.pb \
     --output_labels ./retrained_labels.txt \
@@ -86,7 +93,7 @@ For data analysis itself, you could use five ways to classify (see 'Ways to Clas
 - As a note, I intentionally left the step size as 4000 (default).
 - Second, test the model by using the following command:
 
-```
+```bash
   $ python retrain-test.py <path_to_image>
 ```
 
@@ -111,4 +118,5 @@ I do NOT own any of the pictures that might be inside the `dataset` folder. All 
 ## Credits
 
 - [FreedomOfKeima](https://github.com/freedomofkeima) for the dataset and inspiration.
+- [Qhgz2013](https://github.com/qhgz2013) for the anime face detector.
 - [Nagadomi](https://github.com/nagadomi) for the anime face model.
